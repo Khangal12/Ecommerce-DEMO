@@ -9,6 +9,7 @@ cartIcon.onclick = () => {
 closeCart.onclick = () => {
   cart.classList.remove("active");
 };
+
 if (document.readyState == "laoding") {
   document.addEventListener("DOMContentLoaded", ready);
 } else {
@@ -35,6 +36,7 @@ function ready() {
     var button = addCart[i];
     button.addEventListener("click", addCartClicked);
   }
+
   //buy button work
   document
     .getElementsByClassName("btn-buy")[0]
@@ -71,6 +73,7 @@ function addCartClicked(event) {
   var productImg = shopProducts.getElementsByClassName("product-img")[0].src;
   addProductToCart(title, price, productImg);
   updatetotal();
+  cart.classList.add("active");
 }
 
 function addProductToCart(title, price, img) {
